@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+.header{
+  padding:15px;
+  background-color:#000042;
+  color:#fff;
+  font-size:19px;
+  font-weight:bold;
+}
