@@ -3,8 +3,14 @@ import PropTypes from "prop-types";
 import '../css/menutab.css';
 
 function Menulist({id, name, price, qty, img}){
+    
+    const onClickEvent=(e)=>{
+        this.setState={
+            basket:e        
+        }
+    }
     return (
-        <div className='list-item'>
+        <div className='list-item' onClick={onClickEvent} >
             <div className='item-thumbnail'>
                 <img src={img} />
             </div>
