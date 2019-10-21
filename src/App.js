@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 
 import './App.css';
 import Menutap from './components/menutap.js';
@@ -27,12 +27,14 @@ class App extends React.Component {
 
                 <Menutap handleInit={this.handleInit}/>
                 <div>
-                    {/*<div style={{float:'left'}}>
-                      <Basket />
+                    <div style={{float:'left'}}>
+                      <Basket 
+                       basket={this.basket}
+                      />
                   </div>
                   <div style={{float:'right'}}>
                       <Payment />
-                  </div>*/}
+                  </div>
                 </div>
                 <Footer/>
             </div>
