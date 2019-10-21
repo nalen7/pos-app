@@ -2,7 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import '../css/menutab.css';
 
+
 function Menulist({id, name, price, qty, img}){
+
     return (
         <div className='list-item'>
             <div className='item-thumbnail'>

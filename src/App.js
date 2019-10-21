@@ -1,16 +1,44 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+
 import './App.css';
 import Menutap from './components/menutap.js';
+import Basket from './components/basket.js';
+import Payment from './components/payment.js'
 import Footer from './Footer.js';
 
-function App() {
-  return (
-    <div className="App">
-          <div className='header'>Imform Cafe POS</div>
-          <Menutap />
-          <Footer />
-    </div>
-  );
+class App extends React.Component {
+    state = {
+        basket : []
+    }
+    handleInit = (basket) => {
+        this.setState({
+            basket
+        });
+        console.log(basket);
+    }
+
+
+
+    render() {
+        return (
+            <div className="App">
+                <div className='header'>Imform Cafe POS</div>
+
+                <Menutap handleInit={this.handleInit}/>
+                <div>
+                    {/*<div style={{float:'left'}}>
+                      <Basket />
+                  </div>
+                  <div style={{float:'right'}}>
+                      <Payment />
+                  </div>*/}
+                </div>
+                <Footer/>
+            </div>
+        );
+    }
 }
+
 
 export default App;
