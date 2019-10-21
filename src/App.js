@@ -12,7 +12,7 @@ function App() {
           <Menutap />
     </div>
     <div>
-      <div style={{float:"left"}} className="basket"><Basket/></div>
+      <div style={{float:"left",}} className="basket"><Basket/></div>
       <div style={{float:"right"}}></div>
     </div>
           <Footer />
