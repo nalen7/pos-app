@@ -3,7 +3,7 @@ import React from 'react';
 
 import './App.css';
 import Menutap from './components/menutap.js';
-import Basket from './components/basket.js';
+import Basket from './components/Basket.js';
 import Payment from './components/payment.js'
 import Footer from './Footer.js';
 
