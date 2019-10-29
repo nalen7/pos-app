@@ -2,9 +2,13 @@ import React from 'react';
 import '../css/basket.css';
 
 
-function Basket ({basket}) {
-        console.log(basket);
-        return (
+function Basket (basket) {
+//console.log(basket.basket)
+basket.basket.map(item=>(
+    console.log(item.name),
+    console.log(item.id)
+))
+    return (
             <div>
                 <div className="list-div"> <table>
                     <tr><th>상품명</th><th>가격</th><th>수량</th><th>삭제</th></tr>
