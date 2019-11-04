@@ -12,7 +12,6 @@ class App extends React.Component {
        this.setState({
            basket
        });
-       console.log(basket);
    }
    render() {
        return (
@@ -22,7 +21,8 @@ class App extends React.Component {
               <div>
                    <div style={{float:'left'}}>
                      <Basket 
-                     basket={this.state.basket}/>
+                     basket={this.state.basket}
+                     />
                  </div>
                  <div style={{float:'right'}}>
                      <Payment />
