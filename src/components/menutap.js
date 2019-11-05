@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Tabs } from 'antd';
 import Menulist from './Menulist';
 
