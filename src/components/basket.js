@@ -2,25 +2,53 @@ import React,{Component} from 'react';
 import '../css/basket.css';
 
 
-class Basket extends Component {
-    state = {
-        basketAsync: [],
+class Basket extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            basketAsync: [],
+            status: false,
+        }
     }
     componentWillUpdate(prevProps, prevState, snapshot) {
         if(prevProps.basket !== this.state.basketAsync){
-            this.setState({
-                basketAsync: prevProps.basket
-            });
+            if(this.state.status){
+                this.setState({
+                    status: false
+                })
+            }else {
+                this.setState({
+                    basketAsync: prevProps.basket,
+                    status: false
+                });
+            }
         }else{
-            return
+           return
+        }
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot) {
+        const {handleDeleteIt} = this.props;
+
+        //state 값과 이전에 받아온 state 값이 다를때만 실행
+        if (this.state.status && prevState.basket !== this.state.basketAsync) {
+            handleDeleteIt(this.state.basketAsync);
+            this.setState({
+                status: false
+            })
         }
     }
 
     handleDelete = (id) => {
-        console.log(id)
+        const basket = this.state.basketAsync;
+        this.setState({
+            basketAsync: basket ? basket.filter(bas=>bas.id!==id) : [],
+            status: true
+        });
     }
+
     render(){
-        console.log('stateBasket', this.state.basketAsync)
         return (
             <div>
                 <div className="list-div"> <table>

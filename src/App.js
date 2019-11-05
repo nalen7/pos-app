@@ -17,7 +17,13 @@ class App extends React.Component {
         console.log(basket);
     }
 
+    handleDeleteIt = (basketAnsy) => {
+        this.setState({
+            basket : basketAnsy
+        });
 
+        console.log(basketAnsy);
+    }
 
     render() {
         return (
@@ -27,7 +33,7 @@ class App extends React.Component {
                 <Menutap handleInit={this.handleInit}/>
                 <div>
                     <div style={{float:'left'}}>
-                      <Basket basket={this.state.basket} />
+                      <Basket basket={this.state.basket}  handleDeleteIt={this.handleDeleteIt}/>
                     </div>
                     <div style={{float:'right'}}>
                       {/*<Payment />*/}

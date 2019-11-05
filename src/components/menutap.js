@@ -46,7 +46,6 @@ class menutap extends React.Component{
 
     componentDidUpdate(prevProps, prevState, snapshot) {
         const {handleInit} = this.props;
-        console.log(this.state.basket);
 
         //state 값과 이전에 받아온 state 값이 다를때만 실행
         if (prevState.basket !== this.state.basket) {
