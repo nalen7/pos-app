@@ -3,6 +3,9 @@ import '../css/basket.css';
 
 
 class Basket extends Component {
+    handleRemove=(id)=>{
+    console.log(id);
+    }
     render(){
         const basket=this.props;
         return (
@@ -14,7 +17,7 @@ class Basket extends Component {
                         <tr key={index}><td>{item.name}</td>
                         <td>{item.price}</td>
                         <td>{item.qty}</td>
-                        <td><span>삭제</span></td>
+                        <td><span onClick={()=>this.handleRemove(item.id)}>삭제</span></td>
                         </tr>
                     ))}
                     </tbody>
